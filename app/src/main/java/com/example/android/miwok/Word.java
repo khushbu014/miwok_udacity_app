@@ -8,7 +8,9 @@ public class Word {
 
     private String miwokTranslation;
     private String defaultTranslation;
-    private int resourseId;
+    private int resourseId=HAS_NO_IMAGE;
+    private static final int HAS_NO_IMAGE=-1;
+
 
     Word(String miwokTranslation , String defaultTranslation ,  int resourseId)
     {
@@ -32,5 +34,11 @@ public class Word {
 
     public int getResourseId(){
         return resourseId;
+    }
+
+    public boolean hasImage(){
+        if(resourseId==HAS_NO_IMAGE)
+            return false;
+        else return true;
     }
 }
